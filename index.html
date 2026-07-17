@@ -3,356 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel de Oliveira Ribeiro | Portfolio & Landing Page</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            line-height: 1.6;
-        }
-
-        :root {
-            --primary: #0284c7;
-            --primary-hover: #38bdf8;
-            --cyber-accent: #06b6d4;
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-        }
-
-        /* Menu de Navegação Fixo */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(15, 23, 42, 0.95);
-            border-bottom: 2px solid #1e293b;
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        nav .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--text-main);
-            letter-spacing: 1px;
-        }
-
-        nav .logo span {
-            color: var(--cyber-accent);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--cyber-accent);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 140px 50px 80px 50px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 50px;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-text h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 15px;
-            color: var(--text-main);
-        }
-
-        .hero-text h1 span {
-            color: var(--primary);
-        }
-
-        .hero-text h2 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--cyber-accent);
-            margin-bottom: 20px;
-        }
-
-        .hero-text p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            max-width: 540px;
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .infra-illustration {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-        }
-
-        /* Botões */
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        
-
-        .btn:hover {
-            background-color: #0369a1;
-            transform: translateY(-2px);
-        }
-
-        /* Botão Secundário (Download de Currículo) */
-        .btn-secondary {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--cyber-accent);
-            padding: 12px 28px;
-            border-radius: 6px;
-            border: 2px solid var(--cyber-accent);
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s, color 0.3s, transform 0.2s;
-            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--cyber-accent);
-            color: #0f172a;
-            transform: translateY(-2px);
-        }
-
-        
-
-        .hero-buttons{
-display:flex;
-gap:15px;
-align-items:center;
-flex-wrap:wrap;
-margin-top:20px;
-}
-@media (max-width:768px){
-.hero-buttons{justify-content:center;}
-}
-/* Seções */
-        section {
-            padding: 80px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-            scroll-margin-top: 80px;
-        }
-
-        section h2 {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            text-align: center;
-            position: relative;
-        }
-
-        section h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: var(--cyber-accent);
-            margin: 10px auto 0 auto;
-            border-radius: 2px;
-        }
-
-        /* Grid de Projetos */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background-color: var(--bg-card);
-            border: 1px solid #2e3e56;
-            border-radius: 8px;
-            padding: 25px;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--cyber-accent);
-        }
-
-        .project-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-            color: var(--text-main);
-        }
-
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .project-card .tech-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tech-tag {
-            background-color: #0f172a;
-            color: var(--cyber-accent);
-            font-size: 0.8rem;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        /* Grid de Tecnologias */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
-        .skill-box {
-            background-color: var(--bg-card);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--cyber-accent);
-        }
-
-        .skill-box h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        .skill-box ul {
-            list-style: none;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .skill-box ul li {
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .skill-box ul li::before {
-            content: '•';
-            color: var(--cyber-accent);
-            font-weight: bold;
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: #0b0f19;
-            padding: 40px 50px;
-            text-align: center;
-            border-top: 1px solid #1e293b;
-        }
-
-        footer p {
-            color: var(--text-muted);
-            margin-bottom: 15px;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .contact-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .contact-links a:hover {
-            color: var(--cyber-accent);
-        }
-
-        @media (max-width: 768px) {
-            nav { padding: 15px 20px; }
-            .hero { flex-direction: column; text-align: center; padding-top: 100px; }
-            .hero-text p { margin: 0 auto 30px auto; }
-        }
-    </style>
+    <meta name="description" content="Portfólio de infraestrutura de TI e cybersecurity de Daniel de Oliveira Ribeiro.">
+    <title>Daniel de Oliveira Ribeiro | Portfólio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-    <nav>
-        <div class="logo">DANIEL<span>.INFRA</span></div>
-        <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#tecnologias">Tecnologias</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
+<body data-page="index" data-root=".">
+    <div data-component="header"></div>
 
-    <section id="inicio" class="hero">
-        <div class="hero-text">
-            <h1>Daniel de <span>Oliveira Ribeiro</span></h1>
-            <h2>Infraestrutura de TI & Cybersecurity</h2>
-            <p>Especialista no gerenciamento de infraestruturas críticas, segurança defensiva e administração de redes. Focado na mitigação de riscos, automação de processos operacionais e resiliência de sistemas.</p>
-            <div class="hero-buttons">
-    <a href="#projetos" class="btn">Ver Projetos</a>
+    <main>
+        <section id="inicio" class="home-hero">
+            <div class="hero-text">
+                <h1>Daniel de <span>Oliveira Ribeiro</span></h1>
+                <h2>Infraestrutura de TI & Cybersecurity</h2>
 
-    <a href="curriculo.pdf"
-       class="btn-secondary"
-       download>
-        📄 Baixar Currículo
-    </a>
-</div>
-        </div>
-        <div class="hero-image">
-            <svg class="infra-illustration" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <p>
+                    Especialista no gerenciamento de infraestruturas críticas,
+                    segurança defensiva e administração de redes. Focado na mitigação
+                    de riscos, automação de processos operacionais e resiliência de sistemas.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="projetos.html" class="btn">Ver Projetos</a>
+                    <a href="curriculo.pdf" class="btn-secondary" download>📄 Baixar Currículo</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <svg class="infra-illustration" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="80" y="80" width="240" height="80" rx="8" fill="#1e293b" stroke="#0284c7" stroke-width="3"/>
                 <circle cx="110" cy="120" r="8" fill="#22c55e" />
                 <circle cx="134" cy="120" r="8" fill="#22c55e" />
@@ -369,93 +47,100 @@ margin-top:20px;
                 <rect x="185" y="295" width="30" height="22" rx="4" fill="#06b6d4"/>
                 <path d="M191 295 V286 C191 280, 209 280, 209 286 V295" stroke="#06b6d4" stroke-width="3" fill="none"/>
             </svg>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <section id="projetos">
-        <h2>Projetos em Destaque</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>🛡️ Cibersegurança e Defesa</h3>
-                <p>Implementação de estratégias de segurança defensiva e monitoramento proativo utilizando Wazuh SIEM para mitigação de riscos e resposta a incidentes.</p>
-                <div class="tech-list">
-                    <span class="tech-tag">Wazuh SIEM</span>
-                    <span class="tech-tag">Hardening</span>
-                    <span class="tech-tag">SecOps</span>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>🌐 Infraestrutura de Redes</h3>
-                <p>Arquitetura e administração de redes corporativas, configuração de roteamento, segmentação e estabelecimento de políticas robustas de firewall e VPNs.</p>
-                <div class="tech-list">
-                    <span class="tech-tag">Routing (CCNA)</span>
-                    <span class="tech-tag">pfSense</span>
-                    <span class="tech-tag">VLAN / VPN</span>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>📊 Monitoramento e Automação</h3>
-                <p>Visibilidade em tempo real de servidores e hosts via Zabbix/OCS Inventory, aliada à criação de scripts para padronização e automação de chamados técnicos.</p>
-                <div class="tech-list">
-                    <span class="tech-tag">Zabbix Server</span>
-                    <span class="tech-tag">PowerShell</span>
-                    <span class="tech-tag">Automação .bat</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+        <section id="projetos-destaque" class="content-section">
+            <h2 class="section-title">Projetos em Destaque</h2>
 
-    <section id="tecnologias">
-        <h2>Core Competencies</h2>
-        <div class="skills-container">
-            <div class="skill-box">
-                <h3>Cibersegurança</h3>
-                <ul>
-                    <li>Wazuh SIEM (Defesa)</li>
-                    <li>Políticas de Segurança</li>
-                    <li>Hardening de Sistemas</li>
-                    <li>Conceitos HackOne</li>
-                </ul>
-            </div>
-            <div class="skill-box">
-                <h3>Redes</h3>
-                <ul>
-                    <li>Roteamento (CCNA)</li>
-                    <li>Firewall pfSense</li>
-                    <li>Segmentação (VLANs)</li>
-                    <li>VPNs e Acesso Remoto</li>
-                </ul>
-            </div>
-            <div class="skill-box">
-                <h3>Sistemas e Cloud</h3>
-                <ul>
-                    <li>Linux (Ubuntu/CentOS)</li>
-                    <li>Windows Server 2025</li>
-                    <li>Virtualização (Proxmox)</li>
-                    <li>Cloud Computing</li>
-                </ul>
-            </div>
-            <div class="skill-box">
-                <h3>Monitoramento & Automação</h3>
-                <ul>
-                    <li>Zabbix Server & OCS</li>
-                    <li>PowerShell Scripts</li>
-                    <li>Automação em Batch (.bat)</li>
-                    <li>Resolução Proativa</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+            <div class="featured-grid">
+                <article class="featured-card">
+                    <h3>🛡️ Cibersegurança e Defesa</h3>
+                    <p>
+                        Estratégias de segurança defensiva e monitoramento proativo
+                        utilizando Wazuh SIEM.
+                    </p>
+                    <div class="tech-list">
+                        <span class="tech-tag">Wazuh SIEM</span>
+                        <span class="tech-tag">Hardening</span>
+                        <span class="tech-tag">SecOps</span>
+                    </div>
+                </article>
 
-    <footer id="contato">
-        <p>© 2026 Daniel de Oliveira Ribeiro. Todos os direitos reservados.</p>
-        <div class="contact-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="#">E-mail</a>
-        </div>
-    </footer>
+                <article class="featured-card">
+                    <h3>🌐 Infraestrutura de Redes</h3>
+                    <p>
+                        Administração de redes, roteamento, segmentação, firewall e VPN.
+                    </p>
+                    <div class="tech-list">
+                        <span class="tech-tag">Routing</span>
+                        <span class="tech-tag">pfSense</span>
+                        <span class="tech-tag">VLAN / VPN</span>
+                    </div>
+                </article>
 
+                <article class="featured-card">
+                    <h3>📊 Monitoramento e Automação</h3>
+                    <p>
+                        Monitoramento de ativos e automação de processos operacionais.
+                    </p>
+                    <div class="tech-list">
+                        <span class="tech-tag">Zabbix</span>
+                        <span class="tech-tag">PowerShell</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="tecnologias" class="content-section">
+            <h2 class="section-title">Competências Técnicas</h2>
+
+            <div class="skills-container">
+                <article class="skill-box">
+                    <h3>Cibersegurança</h3>
+                    <ul>
+                        <li>Wazuh SIEM</li>
+                        <li>Políticas de segurança</li>
+                        <li>Hardening de sistemas</li>
+                        <li>Monitoramento defensivo</li>
+                    </ul>
+                </article>
+
+                <article class="skill-box">
+                    <h3>Redes</h3>
+                    <ul>
+                        <li>Roteamento</li>
+                        <li>Firewall pfSense</li>
+                        <li>Segmentação por VLAN</li>
+                        <li>VPN e acesso remoto</li>
+                    </ul>
+                </article>
+
+                <article class="skill-box">
+                    <h3>Sistemas e Virtualização</h3>
+                    <ul>
+                        <li>Linux</li>
+                        <li>Windows Server</li>
+                        <li>Proxmox</li>
+                        <li>Cloud Computing</li>
+                    </ul>
+                </article>
+
+                <article class="skill-box">
+                    <h3>Monitoramento e Automação</h3>
+                    <ul>
+                        <li>Zabbix e OCS</li>
+                        <li>Python</li>
+                        <li>PowerShell</li>
+                        <li>Batch</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div data-component="footer"></div>
+    <script src="js/components.js"></script>
 </body>
 </html>
